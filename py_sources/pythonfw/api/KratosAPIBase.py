@@ -10,7 +10,6 @@ from pythonfw.core.api import http
 class KratosAPIBase:
     
     def __init__(self):
-#         self._userConfig = UserConfig.get_user_config(configKey="user", configFile="Data/user_conf.json")
         self._userConfig = UserConfig.get_user_config()
         if self._userConfig:
             api.USERNAME = self._userConfig.user

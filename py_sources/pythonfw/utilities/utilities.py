@@ -4,7 +4,7 @@ Created on Mar 11, 2020
 @author: tiep.tra
 '''
 import win32serviceutil
-from pythonfw.core.assertion import SeleniumAssert, Assert
+from pythonfw.core.assertion import Assert
 from PIL import Image, ImageChops 
 import time
 import os

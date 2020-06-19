@@ -1,10 +1,7 @@
-from robot.libraries.BuiltIn import BuiltIn
-import re
-from importlib import import_module
+from collections import namedtuple
+import json
 from robot.libraries import DateTime
-import os
-from pythonfw.core import root
-import winreg
+from robot.libraries.BuiltIn import BuiltIn
 
 def get_config_info(variableKey,variableFile):
     robotBuiltin = BuiltIn()
@@ -22,3 +19,7 @@ def get_current_date_time(timeZone='local', increment=0, resultFormat='timestamp
 
 def fatal_error(message=None):
     BuiltIn().fatal_error(message)
+
+def getObjectFromJson(jsonFile):
+    return json.loads(jsonFile, object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))
+

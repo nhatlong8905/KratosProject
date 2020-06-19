@@ -1,45 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.8.2 on win32)" generated="20200619 10:42:48.746" rpa="false">
-<suite id="s1" name="MN300-BackEnd" source="D:\1.SourceCode\Project\Kratos\MN300-BackEnd">
-<suite id="s1-s1" name="Test Cases" source="D:\1.SourceCode\Project\Kratos\MN300-BackEnd\Test Cases">
-<suite id="s1-s1-s1" name="Server Api" source="D:\1.SourceCode\Project\Kratos\MN300-BackEnd\Test Cases\server_api.robot">
+<robot generator="Robot 3.2.1 (Python 3.8.2 on win32)" generated="20200619 14:22:53.660" rpa="false">
+<suite id="s1" name="KratosProject" source="D:\1.SourceCode\Project\Kratos\KratosProject">
+<suite id="s1-s1" name="Test Cases" source="D:\1.SourceCode\Project\Kratos\KratosProject\Test Cases">
+<suite id="s1-s1-s1" name="Server Api" source="D:\1.SourceCode\Project\Kratos\KratosProject\Test Cases\server_api.robot">
 <test id="s1-s1-s1-t1" name="Test case 1">
 <kw name="Get List Server" library="ServerAPI">
 <assign>
 <var>${resp}</var>
 </assign>
-<msg timestamp="20200619 10:42:54.066" level="INFO">Request: POST http://lgus3034-2k12:5555/rest/Token</msg>
-<msg timestamp="20200619 10:42:54.473" level="INFO">Response: 200 OK</msg>
-<msg timestamp="20200619 10:42:59.912" level="INFO">Request: GET http://lgus3034-2k12:5555/rest/Server/Server</msg>
-<msg timestamp="20200619 10:43:00.107" level="INFO">Response: 200 OK</msg>
-<msg timestamp="20200619 10:43:02.342" level="INFO">respond: {"uri": "/Server/Server/1", "data": {"name": "localhost", "serverTime": "1592538180270000", "id": 1}}</msg>
-<msg timestamp="20200619 10:43:02.346" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20200619 10:42:49.200" endtime="20200619 10:43:02.347"></status>
+<msg timestamp="20200619 14:22:53.914" level="INFO">Request: POST http://lgus3034-2k12:5555/rest/Token</msg>
+<msg timestamp="20200619 14:22:54.312" level="INFO">Response: 200 OK</msg>
+<msg timestamp="20200619 14:22:54.313" level="INFO">Request: GET http://lgus3034-2k12:5555/rest/Server/Server</msg>
+<msg timestamp="20200619 14:22:54.506" level="INFO">Response: 200 OK</msg>
+<msg timestamp="20200619 14:22:54.507" level="INFO">respond: {"uri": "/Server/Server/1", "data": {"name": "localhost", "serverTime": "1592551374419000", "id": 1}}</msg>
+<msg timestamp="20200619 14:22:54.508" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200619 14:22:53.912" endtime="20200619 14:22:54.508"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
-<arg>an log${resp}</arg>
+<arg>logrepo${resp}</arg>
 </arguments>
-<status status="PASS" starttime="20200619 10:43:02.349" endtime="20200619 10:43:02.354"></status>
+<status status="PASS" starttime="20200619 14:22:54.509" endtime="20200619 14:22:54.510"></status>
 </kw>
 <kw name="Check Status List Server" library="ServerAPI">
-<status status="PASS" starttime="20200619 10:43:02.355" endtime="20200619 10:43:03.329"></status>
+<status status="PASS" starttime="20200619 14:22:54.511" endtime="20200619 14:22:54.512"></status>
 </kw>
 <kw name="Verify Server Information" library="ServerAPI">
 <arguments>
 <arg>localhost</arg>
 </arguments>
-<msg timestamp="20200619 10:43:03.339" level="INFO">name: localhost</msg>
-<status status="PASS" starttime="20200619 10:43:03.333" endtime="20200619 10:43:03.340"></status>
+<msg timestamp="20200619 14:22:54.514" level="INFO">name: localhost</msg>
+<status status="PASS" starttime="20200619 14:22:54.513" endtime="20200619 14:22:54.514"></status>
 </kw>
-<status status="PASS" starttime="20200619 10:42:49.198" endtime="20200619 10:43:03.341" critical="yes"></status>
+<kw name="Get Data Api" library="ServerAPI">
+<assign>
+<var>${data}</var>
+</assign>
+<msg timestamp="20200619 14:22:54.516" level="INFO">${data} = localhost</msg>
+<status status="PASS" starttime="20200619 14:22:54.515" endtime="20200619 14:22:54.516"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>logdata${data}</arg>
+</arguments>
+<status status="PASS" starttime="20200619 14:22:54.516" endtime="20200619 14:22:54.516"></status>
+</kw>
+<status status="PASS" starttime="20200619 14:22:53.911" endtime="20200619 14:22:54.517" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20200619 10:42:48.835" endtime="20200619 10:43:03.344"></status>
+<status status="PASS" starttime="20200619 14:22:53.720" endtime="20200619 14:22:54.517"></status>
 </suite>
-<status status="PASS" starttime="20200619 10:42:48.829" endtime="20200619 10:43:03.348"></status>
+<status status="PASS" starttime="20200619 14:22:53.716" endtime="20200619 14:22:54.519"></status>
 </suite>
-<status status="PASS" starttime="20200619 10:42:48.777" endtime="20200619 10:43:03.352"></status>
+<status status="PASS" starttime="20200619 14:22:53.693" endtime="20200619 14:22:54.521"></status>
 </suite>
 <statistics>
 <total>
@@ -49,9 +63,9 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="MN300-BackEnd">MN300-BackEnd</stat>
-<stat pass="1" fail="0" id="s1-s1" name="Test Cases">MN300-BackEnd.Test Cases</stat>
-<stat pass="1" fail="0" id="s1-s1-s1" name="Server Api">MN300-BackEnd.Test Cases.Server Api</stat>
+<stat pass="1" fail="0" id="s1" name="KratosProject">KratosProject</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Test Cases">KratosProject.Test Cases</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="Server Api">KratosProject.Test Cases.Server Api</stat>
 </suite>
 </statistics>
 <errors>

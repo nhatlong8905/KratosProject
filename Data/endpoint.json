@@ -1,0 +1,6 @@
+{
+  "serverapi":"/rest/Server/Server",
+  "user":"/rest/Server/Server",
+  "security":"/rest/Server/Server",
+  
+}

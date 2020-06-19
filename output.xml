@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.2 on win32)" generated="20200619 10:42:48.746" rpa="false">
+<suite id="s1" name="MN300-BackEnd" source="D:\1.SourceCode\Project\Kratos\MN300-BackEnd">
+<suite id="s1-s1" name="Test Cases" source="D:\1.SourceCode\Project\Kratos\MN300-BackEnd\Test Cases">
+<suite id="s1-s1-s1" name="Server Api" source="D:\1.SourceCode\Project\Kratos\MN300-BackEnd\Test Cases\server_api.robot">
+<test id="s1-s1-s1-t1" name="Test case 1">
+<kw name="Get List Server" library="ServerAPI">
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20200619 10:42:54.066" level="INFO">Request: POST http://lgus3034-2k12:5555/rest/Token</msg>
+<msg timestamp="20200619 10:42:54.473" level="INFO">Response: 200 OK</msg>
+<msg timestamp="20200619 10:42:59.912" level="INFO">Request: GET http://lgus3034-2k12:5555/rest/Server/Server</msg>
+<msg timestamp="20200619 10:43:00.107" level="INFO">Response: 200 OK</msg>
+<msg timestamp="20200619 10:43:02.342" level="INFO">respond: {"uri": "/Server/Server/1", "data": {"name": "localhost", "serverTime": "1592538180270000", "id": 1}}</msg>
+<msg timestamp="20200619 10:43:02.346" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20200619 10:42:49.200" endtime="20200619 10:43:02.347"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>an log${resp}</arg>
+</arguments>
+<status status="PASS" starttime="20200619 10:43:02.349" endtime="20200619 10:43:02.354"></status>
+</kw>
+<kw name="Check Status List Server" library="ServerAPI">
+<status status="PASS" starttime="20200619 10:43:02.355" endtime="20200619 10:43:03.329"></status>
+</kw>
+<kw name="Verify Server Information" library="ServerAPI">
+<arguments>
+<arg>localhost</arg>
+</arguments>
+<msg timestamp="20200619 10:43:03.339" level="INFO">name: localhost</msg>
+<status status="PASS" starttime="20200619 10:43:03.333" endtime="20200619 10:43:03.340"></status>
+</kw>
+<status status="PASS" starttime="20200619 10:42:49.198" endtime="20200619 10:43:03.341" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200619 10:42:48.835" endtime="20200619 10:43:03.344"></status>
+</suite>
+<status status="PASS" starttime="20200619 10:42:48.829" endtime="20200619 10:43:03.348"></status>
+</suite>
+<status status="PASS" starttime="20200619 10:42:48.777" endtime="20200619 10:43:03.352"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="MN300-BackEnd">MN300-BackEnd</stat>
+<stat pass="1" fail="0" id="s1-s1" name="Test Cases">MN300-BackEnd.Test Cases</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="Server Api">MN300-BackEnd.Test Cases.Server Api</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<projectConfiguration>
+    <configVersion>2</configVersion>
+    <relativeTo>PROJECT</relativeTo>
+    <referencedLibrary type="PYTHON" name="datetime" path="RobotProject1/ResourceFiles/CommonKeywords/datetime.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="JSONLibrary" path="C:/Python38-32/Lib/site-packages/JSONLibrary/__init__.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="RequestsLibrary" path="C:/Python38-32/Lib/site-packages/RequestsLibrary/__init__.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="urllib3" path="C:/Python38-32/Lib/site-packages/urllib3/__init__.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="ServerAPI" path="RobotProject1/py_sources/pythonfw/api/ServerAPI.py" dynamic="false"/>
+    <pythonpath>
+        <path location="py_sources"/>
+    </pythonpath>
+    <classpath/>
+    <excludedForValidation/>
+    <isValidatedFileSizeCheckingEnabled>true</isValidatedFileSizeCheckingEnabled>
+    <validatedFileMaxSize>1024</validatedFileMaxSize>
+</projectConfiguration>

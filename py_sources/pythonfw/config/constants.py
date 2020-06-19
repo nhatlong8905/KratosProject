@@ -1,0 +1,9 @@
+''' User Account'''
+HOST_KEY = "host"
+USER_KEY = "user"
+PASSWORD_KEY = "password"
+''' API Request'''
+ENDPOINT_KEY = "endpoint"
+AUTHORIZATION_KEY = "authorization"
+CONTENT_KEY = "content-Type"
+BODY_KEY = "body"

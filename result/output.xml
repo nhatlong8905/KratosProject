@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.6.8 on win32)" generated="20200531 15:46:26.626" rpa="false">
+<suite id="s1" name="TC01 Login 01" source="C:\Users\hung.vo\PycharmProjects\MN300-RestAPI\TC01_Login_01.robot">
+<test id="s1-t1" name="TestCase_001_get_request">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Application_URL}</arg>
+</arguments>
+<msg timestamp="20200531 15:46:27.477" level="TRACE">Arguments: [ 'https://10.244.125.77' ]</msg>
+<msg timestamp="20200531 15:46:27.477" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200531 15:46:27.477" endtime="20200531 15:46:27.477"></status>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>Appdata</arg>
+<arg>${Application_URL}</arg>
+</arguments>
+<msg timestamp="20200531 15:46:27.478" level="TRACE">Arguments: [ 'Appdata' | 'https://10.244.125.77' ]</msg>
+<msg timestamp="20200531 15:46:27.478" level="INFO">Creating Session using : alias=Appdata, url=https://10.244.125.77, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg timestamp="20200531 15:46:27.478" level="DEBUG">Creating session: Appdata</msg>
+<msg timestamp="20200531 15:46:27.478" level="DEBUG">Argument types are:
+&lt;class 'bool'&gt;</msg>
+<msg timestamp="20200531 15:46:27.478" level="TRACE">Return: &lt;requests.sessions.Session object at 0x00000207711BE7B8&gt;</msg>
+<status status="PASS" starttime="20200531 15:46:27.477" endtime="20200531 15:46:27.478"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>Content-Type=application/json</arg>
+</arguments>
+<assign>
+<var>&amp;{headers}</var>
+</assign>
+<msg timestamp="20200531 15:46:27.479" level="TRACE">Arguments: [ 'Content-Type=application/json' ]</msg>
+<msg timestamp="20200531 15:46:27.479" level="TRACE">Return: {'Content-Type': 'application/json'}</msg>
+<msg timestamp="20200531 15:46:27.479" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<status status="PASS" starttime="20200531 15:46:27.478" endtime="20200531 15:46:27.479"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${headers}</arg>
+</arguments>
+<msg timestamp="20200531 15:46:27.480" level="TRACE">Arguments: [ {'Content-Type': 'application/json'} ]</msg>
+<msg timestamp="20200531 15:46:27.480" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200531 15:46:27.480" endtime="20200531 15:46:27.480"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>user=${username}</arg>
+<arg>password=${password}</arg>
+</arguments>
+<assign>
+<var>&amp;{data}</var>
+</assign>
+<msg timestamp="20200531 15:46:27.481" level="TRACE">Arguments: [ 'user=${username}' | 'password=${password}' ]</msg>
+<msg timestamp="20200531 15:46:27.481" level="TRACE">Return: {'password': 'Krt123Krt123@#', 'user': 'admin'}</msg>
+<msg timestamp="20200531 15:46:27.481" level="INFO">&amp;{data} = { user=admin | password=Krt123Krt123@# }</msg>
+<status status="PASS" starttime="20200531 15:46:27.480" endtime="20200531 15:46:27.481"></status>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<doc>Send a POST request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>Appdata</arg>
+<arg>/rest/Token data=${data} headers=${headers}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20200531 15:46:27.482" level="TRACE">Arguments: [ 'Appdata' | "/rest/Token data={'user': 'admin', 'password': 'Krt123Krt123@#'} headers={'Content-Type': 'application/json'}" ]</msg>
+<msg timestamp="20200531 15:46:27.486" level="DEBUG">Starting new HTTPS connection (1): 10.244.125.77:443</msg>
+<msg timestamp="20200531 15:46:27.949" level="DEBUG">https://10.244.125.77:443 "POST /rest/Token%20data=%7B'user':%20'admin',%20'password':%20'Krt123Krt123@ HTTP/1.1" 404 422</msg>
+<msg timestamp="20200531 15:46:27.949" level="INFO">POST Request : url=https://10.244.125.77/rest/Token%20data=%7B'user':%20'admin',%20'password':%20'Krt123Krt123@#'%7D%20headers=%7B'Content-Type':%20'application/json'%7D 
+ path_url=/rest/Token%20data=%7B'user':%20'admin',%20'password':%20'Krt123Krt123@ 
+ headers={'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20200531 15:46:27.949" level="INFO">POST Response : url=https://10.244.125.77/rest/Token%20data=%7B'user':%20'admin',%20'password':%20'Krt123Krt123@#'%7D%20headers=%7B'Content-Type':%20'application/json'%7D 
+ status=404, reason=Not Found 
+ body=&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html;charset=utf-8"/&gt;
+&lt;title&gt;Error 404 Not Found&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;&lt;h2&gt;HTTP ERROR 404&lt;/h2&gt;
+&lt;p&gt;Problem accessing /rest/Token%20data=%7B&amp;apos;user&amp;apos;:%20&amp;apos;admin&amp;apos;,%20&amp;apos;password&amp;apos;:%20&amp;apos;Krt123Krt123@. Reason:
+&lt;pre&gt;    Not Found&lt;/pre&gt;&lt;/p&gt;&lt;hr&gt;&lt;a href="http://eclipse.org/jetty"&gt;Powered by Jetty:// 9.4.19.v20190610&lt;/a&gt;&lt;hr/&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20200531 15:46:27.950" level="INFO">c:\users\hung.vo\python3.6\lib\site-packages\urllib3\connectionpool.py:986: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.244.125.77'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning,</msg>
+<msg timestamp="20200531 15:46:27.950" level="TRACE">Return: &lt;Response [404]&gt;</msg>
+<msg timestamp="20200531 15:46:27.950" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20200531 15:46:27.481" endtime="20200531 15:46:27.950"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${data}</arg>
+</arguments>
+<msg timestamp="20200531 15:46:27.952" level="TRACE">Arguments: [ {'password': 'Krt123Krt123@#', 'user': 'admin'} ]</msg>
+<msg timestamp="20200531 15:46:27.952" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200531 15:46:27.952" endtime="20200531 15:46:27.952"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${json_response}</var>
+</assign>
+<msg timestamp="20200531 15:46:27.953" level="TRACE">Arguments: [ 404 ]</msg>
+<msg timestamp="20200531 15:46:27.953" level="DEBUG">Argument types are:
+&lt;class 'int'&gt;</msg>
+<msg timestamp="20200531 15:46:27.953" level="TRACE">Return: '404'</msg>
+<msg timestamp="20200531 15:46:27.953" level="INFO">${json_response} = 404</msg>
+<status status="PASS" starttime="20200531 15:46:27.953" endtime="20200531 15:46:27.953"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<msg timestamp="20200531 15:46:27.954" level="TRACE">Arguments: [ b'&lt;html&gt;\n&lt;head&gt;\n&lt;meta http-equiv="Content-Type" content="text/html;charset=utf-8"/&gt;\n&lt;title&gt;Error 404 Not Found&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;&lt;h2&gt;HTTP ERROR 404&lt;/h2&gt;\n&lt;p&gt;Problem accessing /rest/Token%20data=%7B&amp;apos;user&amp;apos;:%20&amp;apos;admin&amp;apos;,%20&amp;apos;password&amp;apos;:%20&amp;apos;Krt123Krt123@. Reason:\n&lt;pre&gt;    Not Found&lt;/pre&gt;&lt;/p&gt;&lt;hr&gt;&lt;a href="http://eclipse.org/jetty"&gt;Powered by Jetty:// 9.4.19.v20190610&lt;/a&gt;&lt;hr/&gt;\n\n&lt;/body&gt;\n&lt;/html&gt;\n' ]</msg>
+<msg timestamp="20200531 15:46:27.954" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20200531 15:46:27.953" endtime="20200531 15:46:27.954"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${json_response}</arg>
+<arg>200</arg>
+</arguments>
+<msg timestamp="20200531 15:46:27.955" level="TRACE">Arguments: [ '404' | '200' ]</msg>
+<msg timestamp="20200531 15:46:27.955" level="DEBUG">Argument types are:
+&lt;type 'unicode'&gt;
+&lt;type 'unicode'&gt;</msg>
+<msg timestamp="20200531 15:46:27.955" level="FAIL">404 != 200</msg>
+<msg timestamp="20200531 15:46:27.955" level="DEBUG">Traceback (most recent call last):
+  None</msg>
+<status status="FAIL" starttime="20200531 15:46:27.955" endtime="20200531 15:46:27.955"></status>
+</kw>
+<status status="FAIL" starttime="20200531 15:46:27.476" endtime="20200531 15:46:27.956" critical="yes">404 != 200</status>
+</test>
+<status status="FAIL" starttime="20200531 15:46:26.632" endtime="20200531 15:46:27.957"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="TC01 Login 01">TC01 Login 01</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200531 15:46:26.609" level="ERROR">Error in file 'C:\Users\hung.vo\PycharmProjects\MN300-RestAPI\TC01_Login_01.robot' on line 6: Non-existing setting 'Library ExtendedRequestsLibrary'.</msg>
+<msg timestamp="20200531 15:46:27.025" level="ERROR">Error in file 'C:\Users\hung.vo\PycharmProjects\MN300-RestAPI\TC01_Login_01.robot' on line 4: Importing test library 'Json' failed: ModuleNotFoundError: No module named 'Json'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\hung.vo\Python3.6\Scripts\robot.exe
+  c:\users\hung.vo\python3.6\python36.zip
+  c:\users\hung.vo\python3.6\DLLs
+  c:\users\hung.vo\python3.6\lib
+  c:\users\hung.vo\python3.6
+  c:\users\hung.vo\python3.6\lib\site-packages</msg>
+</errors>
+</robot>

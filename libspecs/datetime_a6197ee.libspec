@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec name="datetime" type="LIBRARY" format="ROBOT" scope="GLOBAL" namedargs="true" generated="2020-06-18T06:57:22Z" specversion="2" source="D:\1.SourceCode\Project\Kratos\MN300-BackEnd\ResourceFiles\CommonKeywords\datetime.py" lineno="1">
+<version />
+<scope>global</scope>
+<namedargs>yes</namedargs>
+<doc>Documentation for library ``datetime``.</doc>
+<kw name="Get Current Time" lineno="3">
+<arguments>
+</arguments>
+<doc />
+</kw>
+<kw name="Hello World" lineno="7">
+<arguments>
+</arguments>
+<doc />
+</kw>
+</keywordspec>

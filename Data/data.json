@@ -1,0 +1,15 @@
+[{	"sat": "Eagle",
+    "location": {
+        "address": "1099 Central",
+        "zip": "91444"
+    },
+    "frequency": "10hz"
+},
+{
+    "sat": "Eagle",
+    "location": {
+        "address": "388 Oakmead Pkw",
+        "zip": "91332"
+    },
+    "frequency": "10hz"
+}]

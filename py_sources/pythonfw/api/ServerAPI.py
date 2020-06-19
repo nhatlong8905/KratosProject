@@ -3,10 +3,7 @@ Created on Jun 17, 2020
 
 @author: nhat.phan
 '''
-
-from collections import namedtuple
 import json
-
 from pythonfw.api.KratosAPIBase import KratosAPIBase
 from pythonfw.core.api.http_response import HTTPResponse
 from pythonfw.core.assertion import Assert
@@ -27,14 +24,14 @@ class ServerAPI(KratosAPIBase):
     
     def check_status_list_server(self):
         if self._response:
-            httpRes = HTTPResponse(self._response)
-            Assert.should_be_equal_as_integers(200, httpRes.status_code)
+            logger.info("status_code: " + str(self._response.status_code))
+            Assert.should_be_equal_as_integers(200, self._response.status_code, "Actuality is" +str(self._response.status_code), "Expectation is "+ str(200))
      
     def verify_server_information(self, name):
         if self._response:
             jsonRe = self._response.json()
             logger.info("name: " + jsonRe['data']['name'])
-            Assert.should_be_equal(jsonRe['data']['name'], name)
+            Assert.should_be_equal(jsonRe['data']['name'], name, "Actuality is" + jsonRe['data']['name'], "Expectation is "+ name)
     
     def get_data_api(self):
         if self._serverObject:

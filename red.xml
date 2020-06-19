@@ -7,6 +7,7 @@
     <referencedLibrary type="PYTHON" name="RequestsLibrary" path="C:/Python38-32/Lib/site-packages/RequestsLibrary/__init__.py" dynamic="false"/>
     <referencedLibrary type="PYTHON" name="urllib3" path="C:/Python38-32/Lib/site-packages/urllib3/__init__.py" dynamic="false"/>
     <referencedLibrary type="PYTHON" name="ServerAPI" path="RobotProject1/py_sources/pythonfw/api/ServerAPI.py" dynamic="false"/>
+    <referencedLibrary type="PYTHON" name="UserTask" path="RobotProject1/py_sources/pythonfw/locust/UserTask.py" dynamic="false"/>
     <pythonpath>
         <path location="py_sources"/>
     </pythonpath>

@@ -22,7 +22,7 @@ class NetworkSettingsAPI(KratosAPIBase):
         self._networkObject = load_data_for_apis(self)
         self._response=""
          
-    def get_network_configuration(self):
+    def get_list_network_configuration(self):
         self._response = self.client.get(self._basePath, headers=self._make_header())
         logger.info("respond json: " + json.dumps(self._response.json()))
         return self._response    
@@ -60,12 +60,18 @@ class NetworkSettingsAPI(KratosAPIBase):
     def verify_network_configuration_information(self, uri = None, hostname = None):
         if self._response:
             dataNW = self._response.json()
-            netWork= Network(dataNW['uri'],dataNW['data']);
-            dataJson= dataObject(json.dumps(netWork.data))
+#             netWork= Network(dataNW['uri'],dataNW['data']);
+#             dataJson= dataObject(json.dumps(netWork.data))
+            dataJson = dataObject(json.dumps(dataNW))
             if uri:
-                Assert.should_be_equal(netWork.uri,uri)
+                Assert.should_be_equal(dataJson.uri,uri)
             if hostname:
-                Assert.should_be_equal(dataJson.hostName,hostname)
+                Assert.should_be_equal(dataJson.data.hostName,hostname)
+    
+    def get_network_configuration(self,number):
+        self._response = self.client.get(self._basePath +"/"+ number, headers=self._make_header())
+        logger.info("respond json: " + json.dumps(self._response.json()))
+        return self._response    
     
     def getlstItem(self, jsonArray):
         lstItemNW=[]

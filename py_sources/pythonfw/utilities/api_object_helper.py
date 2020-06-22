@@ -48,4 +48,7 @@ def get_endpoint_api(self):
 
         return False
 
-
+def get_data_api(self):
+    endPoint = get_endpoint_api(self)
+    jsBody = load_data_for_apis(self)
+    return (endPoint,jsBody)

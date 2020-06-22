@@ -15,6 +15,7 @@ class KratosAPIBase:
             api.USERNAME = self._userConfig.user
             api.PASSWORD = self._userConfig.password
             api.HOST = self._userConfig.host
+            api.TYPE_TOKEN = self._userConfig.typetoken
     @property
     def _access_token(self):
         if api.ACCESS_TOKEN:
@@ -22,7 +23,7 @@ class KratosAPIBase:
         userload = 'user=%s&password=%s' % (api.USERNAME, api.PASSWORD)
         res= self.client.post("/rest/Token", data=userload)
         api.ACCESS_TOKEN = res.text
-        return api.ACCESS_TOKEN
+        return (api.TYPE_TOKEN, api.ACCESS_TOKEN)
     
     @property
     def client(self):
@@ -31,7 +32,7 @@ class KratosAPIBase:
         return api.CLIENT
     
     def _make_header(self, headers: dict = {}):
-        defaultHeader = { 'Authorization': '%s' % self._access_token}
+        defaultHeader = { 'Authorization': '%s %s' % self._access_token}
         if headers:
             return {**defaultHeader, **headers}
         return defaultHeader

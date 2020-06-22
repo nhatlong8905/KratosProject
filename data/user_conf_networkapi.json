@@ -1,0 +1,14 @@
+{
+  "user": {
+    "host": "https://10.244.125.77",
+    "user": "admin",
+    "password": "Krt123Krt123@#",
+    "type": "Bear"
+  },
+    "admin": {
+    "host": "https://10.244.125.77",
+    "user": "admin",
+    "password": "Krt123Krt123@#",
+    "type": "Bear"
+  }
+}

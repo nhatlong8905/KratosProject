@@ -2,11 +2,13 @@
   "user": {
     "host": "http://lgus3034-2k12:5555",
     "user": "admin",
-    "password": "kratos"
+    "password": "kratos",
+    "type": ""
   },
     "admin": {
     "host": "http://lgus3034-2k12:5555",
     "user": "admin",
-    "password": "kratos"
+    "password": "kratos",
+    "type": ""
   }
 }

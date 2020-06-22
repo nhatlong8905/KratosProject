@@ -2,6 +2,7 @@
 HOST_KEY = "host"
 USER_KEY = "user"
 PASSWORD_KEY = "password"
+TYPE_TOKEN = "type"
 ''' API Request'''
 ENDPOINT_KEY = "endpoint"
 AUTHORIZATION_KEY = "authorization"

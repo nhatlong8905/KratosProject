@@ -2,4 +2,5 @@ USERNAME = "";
 PASSWORD = "";
 CLIENT = None;
 ACCESS_TOKEN = "";
+TYPE_TOKEN = "";
 HOST = "";

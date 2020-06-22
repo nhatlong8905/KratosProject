@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<keywordspec name="RequestsLibrary" type="LIBRARY" format="ROBOT" scope="GLOBAL" namedargs="true" generated="2020-06-18T06:57:23Z" specversion="2" source="C:\Python38-32\Lib\site-packages\RequestsLibrary\__init__.py" lineno="5">
+<keywordspec name="RequestsLibrary" type="LIBRARY" format="ROBOT" scope="GLOBAL" namedargs="true" generated="2020-06-22T02:35:44Z" specversion="2" source="C:\Python38-32\Lib\site-packages\RequestsLibrary\__init__.py" lineno="5">
 <version>0.7.0</version>
 <scope>global</scope>
 <namedargs>yes</namedargs>
@@ -19,7 +19,7 @@
 <arg>backoff_factor=0.1</arg>
 <arg>disable_warnings=0</arg>
 <arg>retry_status_list=[]</arg>
-<arg>retry_method_list=['OPTIONS', 'TRACE', 'PUT', 'HEAD', 'DELETE', 'GET']</arg>
+<arg>retry_method_list=['DELETE', 'PUT', 'GET', 'HEAD', 'OPTIONS', 'TRACE']</arg>
 </arguments>
 <doc>Create Session: create a HTTP session to a server
 
@@ -79,7 +79,7 @@
 <arg>backoff_factor=0.1</arg>
 <arg>disable_warnings=0</arg>
 <arg>retry_status_list=[]</arg>
-<arg>retry_method_list=['OPTIONS', 'TRACE', 'PUT', 'HEAD', 'DELETE', 'GET']</arg>
+<arg>retry_method_list=['DELETE', 'PUT', 'GET', 'HEAD', 'OPTIONS', 'TRACE']</arg>
 </arguments>
 <doc>Create Session: create a HTTP session to a server
 
@@ -140,7 +140,7 @@
 <arg>backoff_factor=0.1</arg>
 <arg>disable_warnings=0</arg>
 <arg>retry_status_list=[]</arg>
-<arg>retry_method_list=['OPTIONS', 'TRACE', 'PUT', 'HEAD', 'DELETE', 'GET']</arg>
+<arg>retry_method_list=['DELETE', 'PUT', 'GET', 'HEAD', 'OPTIONS', 'TRACE']</arg>
 </arguments>
 <doc>Create Session: create a HTTP session to a server
 
@@ -200,7 +200,7 @@
 <arg>backoff_factor=0.1</arg>
 <arg>disable_warnings=0</arg>
 <arg>retry_status_list=[]</arg>
-<arg>retry_method_list=['OPTIONS', 'TRACE', 'PUT', 'HEAD', 'DELETE', 'GET']</arg>
+<arg>retry_method_list=['DELETE', 'PUT', 'GET', 'HEAD', 'OPTIONS', 'TRACE']</arg>
 </arguments>
 <doc>Create Session: create a HTTP session to a server
 
@@ -260,7 +260,7 @@
 <arg>backoff_factor=0.1</arg>
 <arg>disable_warnings=0</arg>
 <arg>retry_status_list=[]</arg>
-<arg>retry_method_list=['OPTIONS', 'TRACE', 'PUT', 'HEAD', 'DELETE', 'GET']</arg>
+<arg>retry_method_list=['DELETE', 'PUT', 'GET', 'HEAD', 'OPTIONS', 'TRACE']</arg>
 </arguments>
 <doc>Create Session: create a HTTP session to a server
 

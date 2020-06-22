@@ -20,15 +20,17 @@ class UserConfig(object):
                 config = UserConfig(
                                       item[constants.HOST_KEY],
                                       item[constants.USER_KEY],
-                                      item[constants.PASSWORD_KEY],)
+                                      item[constants.PASSWORD_KEY],
+                                      item[constants.TYPE_TOKEN],)
         except FileNotFoundError as fnfe:
             print (fnfe)
         return config
 
-    def __init__(self, host, user, password):
+    def __init__(self, host, user, password, typetoken):
         self._host = host
         self._user = user
         self._password = password
+        self._typetoken = typetoken
         self._mode = "user" if "".__eq__(host.strip()) else "admin"
 
 
@@ -47,3 +49,7 @@ class UserConfig(object):
     @property
     def password(self):
         return self._password
+    
+    @property
+    def typetoken(self):
+        return self._typetoken

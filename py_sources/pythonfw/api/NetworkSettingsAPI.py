@@ -8,7 +8,6 @@ import json
 
 from pythonfw.api.KratosAPIBase import KratosAPIBase
 from pythonfw.apiobject.Network import Network
-from pythonfw.apiobject.NetworkSettings import NetworkSettings
 from pythonfw.apiobject.dataObject import dataObject
 from pythonfw.core.assertion import Assert
 from pythonfw.core.helpers import logger
@@ -67,6 +66,7 @@ class NetworkSettingsAPI(KratosAPIBase):
                 Assert.should_be_equal(netWork.uri,uri)
             if hostname:
                 Assert.should_be_equal(dataJson.hostName,hostname)
+    
     def getlstItem(self, jsonArray):
         lstItemNW=[]
         for item in jsonArray:

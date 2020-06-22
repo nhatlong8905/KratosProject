@@ -1,5 +1,4 @@
 {
   "ServerAPI":"/rest/Server/Server",
-  "User":"/rest/Server/User",
-  "Security":"/rest/Server/Security"
+  "NetworkSettingsAPI":"/rest/Configuration/NetworkSettings",
 }

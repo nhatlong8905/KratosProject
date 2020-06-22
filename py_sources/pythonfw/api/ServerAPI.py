@@ -19,6 +19,7 @@ class ServerAPI(KratosAPIBase):
     def __init__(self):
         KratosAPIBase.__init__(self)
         self.basedPath = get_endpoint_api(self)
+        logger.info("basedPath: " + str(self.basedPath))
         self._serverObject = load_data_for_apis(self)
         self._response=""
 

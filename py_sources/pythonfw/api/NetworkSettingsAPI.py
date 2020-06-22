@@ -23,7 +23,7 @@ class NetworkSettingsAPI(KratosAPIBase):
         self._response=""
          
     def get_network_configuration(self):
-        self._response = self.client.get(self.basedPath, headers=self._make_header())
+        self._response = self.client.get(self._basePath, headers=self._make_header())
         logger.info("respond json: " + json.dumps(self._response.json()))
         return self._response    
      
@@ -53,7 +53,7 @@ class NetworkSettingsAPI(KratosAPIBase):
         
         headers = self._make_header({'Content-Type': 'application/json' })
         logger.info("Request data: " + requestData)
-        self._response = self.client.put(self.basedPath +"/"+ number, headers=headers, data=requestData)
+        self._response = self.client.put(self._basePath +"/"+ number, headers=headers, data=requestData)
         logger.info("respond json updated: " + json.dumps(self._response.json()))
         return self._response
     

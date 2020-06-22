@@ -31,6 +31,7 @@ def load_data_for_apis(self):
 def get_endpoint_api(self):
     
     EndPointFile = "%s/EndPoint.json" % (apiFolder)
+    
     if not path.exists(EndPointFile):
         logger.warn("%s file doesn't exist" % EndPointFile)
         return False

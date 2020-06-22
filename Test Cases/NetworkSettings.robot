@@ -25,6 +25,8 @@ Test case 2 Update 1st Network Configuration -hostname
     
     Status Should Be    200    ${resp}    
     
+    Sleep    5s    
+
     ${respUpdate}    Get Network configuration     0 
     
     Status Should Be    200    ${respUpdate}    

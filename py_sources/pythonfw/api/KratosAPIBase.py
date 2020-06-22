@@ -28,7 +28,8 @@ class KratosAPIBase:
             return api.ACCESS_TOKEN
         userload = 'user=%s&password=%s' % (api.USERNAME, api.PASSWORD)
         print(userload)
-        res= self.client.post("/rest/Token", data=userload)
+        headers = { 'Content-Type': 'application/json' }
+        res= self.client.post("/rest/Token", data=userload, headers=headers)
         api.ACCESS_TOKEN = res.text
         print(res.text)
         log.info("api.ACCESS_TOKEN: %s", api.ACCESS_TOKEN)

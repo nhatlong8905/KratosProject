@@ -6,7 +6,8 @@ Created on Jun 17, 2020
 from pythonfw import api
 from pythonfw.config.user_config import UserConfig
 from pythonfw.core.api import http
-
+import logging
+log = logging.getLogger("api")
 class KratosAPIBase:
     
     def __init__(self):
@@ -16,6 +17,7 @@ class KratosAPIBase:
             api.PASSWORD = self._userConfig.password
             api.HOST = self._userConfig.host
             api.TYPE_TOKEN = self._userConfig.typetoken
+        log.info("_userConfig: %s %s", api.USERNAME, api.PASSWORD,api.HOST, api.TYPE_TOKEN)
     @property
     def _access_token(self):
         if api.ACCESS_TOKEN:
@@ -23,7 +25,9 @@ class KratosAPIBase:
         userload = 'user=%s&password=%s' % (api.USERNAME, api.PASSWORD)
         res= self.client.post("/rest/Token", data=userload)
         api.ACCESS_TOKEN = res.text
-        return (api.TYPE_TOKEN, api.ACCESS_TOKEN)
+        log.info("api.ACCESS_TOKEN: %s", api.ACCESS_TOKEN)
+#         return (api.TYPE_TOKEN, api.ACCESS_TOKEN)
+        return api.ACCESS_TOKEN
     
     @property
     def client(self):
@@ -32,10 +36,12 @@ class KratosAPIBase:
         return api.CLIENT
     
     def _make_header(self, headers: dict = {}):
-        if api.TYPE_TOKEN=="":
-            defaultHeader = { 'Authorization': '%s' % api.ACCESS_TOKEN}
-        else:
-            defaultHeader = { 'Authorization': '%s %s' % self._access_token}
+#         if api.TYPE_TOKEN=="":
+#             defaultHeader = { 'Authorization': '%s' % api.ACCESS_TOKEN}
+#         else:
+#             defaultHeader = { 'Authorization': '%s %s' % self._access_token}
+        defaultHeader = { 'Authorization': '%s' % self._access_token}
         if headers:
             return {**defaultHeader, **headers}
+        log.info("api.ACCESS_TOKEN: %s", defaultHeader)
         return defaultHeader

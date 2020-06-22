@@ -24,7 +24,7 @@ class ServerAPI(KratosAPIBase):
 
     def get_list_server(self):
         self._response = self.client.get(self.basedPath, headers=self._make_header())
-        logger.info("respond: " + json.dumps(self._response.json()))
+#         logger.info("respond: " + json.dumps(self._response.json()))
         return self._response
     
     def check_status_list_server(self):

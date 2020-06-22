@@ -32,7 +32,10 @@ class KratosAPIBase:
         return api.CLIENT
     
     def _make_header(self, headers: dict = {}):
-        defaultHeader = { 'Authorization': '%s %s' % self._access_token}
+        if api.TYPE_TOKEN=="":
+            defaultHeader = { 'Authorization': '%s' % api.ACCESS_TOKEN}
+        else:
+            defaultHeader = { 'Authorization': '%s %s' % self._access_token}
         if headers:
             return {**defaultHeader, **headers}
         return defaultHeader

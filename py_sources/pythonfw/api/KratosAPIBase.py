@@ -27,7 +27,7 @@ class KratosAPIBase:
     def _access_token(self):
         if api.ACCESS_TOKEN:
             return api.ACCESS_TOKEN
-        userload = 'user:%s&password:%s' % (api.USERNAME, api.PASSWORD)
+        userload = 'user=%s&password=%s' % (api.USERNAME, api.PASSWORD)
         print(userload)
         res= self.client.post("/rest/Token", data=userload)
 #         res = requests.post("https://10.244.125.77/rest/Token", data=userload, headers=headers, verify= False)
@@ -48,7 +48,7 @@ class KratosAPIBase:
 #             defaultHeader = { 'Authorization': '%s' % api.ACCESS_TOKEN}
 #         else:
 #             defaultHeader = { 'Authorization': '%s %s' % self._access_token}
-        defaultHeader = { 'Authorization': '%s' % self._access_token}
+        defaultHeader = { 'Authorization':'%s' % self._access_token}
         if headers:
             return {**defaultHeader, **headers}
         log.info("api.ACCESS_TOKEN: %s", defaultHeader)

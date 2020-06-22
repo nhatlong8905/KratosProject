@@ -1,4 +1,4 @@
 {
   "ServerAPI":"/rest/Server/Server",
-  "NetworkSettingsAPI":"/rest/Configuration/NetworkSettings",
+  "NetworkSettingsAPI":"/rest/Configuration/NetworkSettings"
 }

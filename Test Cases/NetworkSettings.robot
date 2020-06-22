@@ -2,6 +2,9 @@
 Library    ../py_sources/pythonfw/api/NetworkSettingsAPI.py    
 Library    RequestsLibrary    
 
+
+Suite Teardown    Run Keyword    Update Network Configuration Hostname    0    MN300-125-77
+
 *** Variables ***
 ${CONFIGKEY}        user
 ${CONFIGFILE}    Data/user_conf_networkapi.json

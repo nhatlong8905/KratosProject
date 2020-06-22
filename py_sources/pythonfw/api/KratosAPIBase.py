@@ -7,6 +7,7 @@ from pythonfw import api
 from pythonfw.config.user_config import UserConfig
 from pythonfw.core.api import http
 import logging
+import requests
 log = logging.getLogger("api")
 class KratosAPIBase:
     
@@ -29,7 +30,8 @@ class KratosAPIBase:
         userload = 'user:%s&password:%s' % (api.USERNAME, api.PASSWORD)
         print(userload)
         headers = { 'Content-Type': 'application/json' }
-        res= self.client.post("/rest/Token", data=userload, headers=headers)
+#         res= self.client.post("/rest/Token", data=userload, headers=headers, verify= False)
+        res = requests.post("https://10.244.125.77/rest/Token", data=userload, headers=headers, verify= False)
         api.ACCESS_TOKEN = res.text
         print(res.text)
         log.info("api.ACCESS_TOKEN: %s", api.ACCESS_TOKEN)

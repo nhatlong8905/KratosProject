@@ -1,0 +1,18 @@
+{
+   "count": 1,
+    "items": [
+        {
+            "uri": "/Configuration/NetworkSettings/0",
+            "data": {
+                "hostName": "bhuvana-Mon300",
+                "macAddress": "7c:38:6c:10:11:56",
+                "dnsServerAddress": "",
+                "ipAddress": "10.244.126.14",
+                "id": "0",
+                "interfaceName": "eth0",
+                "subnetMask": "255.255.255.0",
+                "defaultGateway": "10.244.126.1",
+                "ntpServerAddress": "10.244.126.77"
+            }
+        }]
+}

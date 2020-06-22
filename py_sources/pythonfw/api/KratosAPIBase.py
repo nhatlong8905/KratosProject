@@ -17,14 +17,20 @@ class KratosAPIBase:
             api.PASSWORD = self._userConfig.password
             api.HOST = self._userConfig.host
             api.TYPE_TOKEN = self._userConfig.typetoken
-        log.info("_userConfig: %s %s", api.USERNAME, api.PASSWORD,api.HOST, api.TYPE_TOKEN)
+            print(api.USERNAME)
+            print(api.PASSWORD)
+            print(api.HOST)
+            print(api.TYPE_TOKEN)
+            log.info("_userConfig: %s %s %s %s", api.USERNAME, api.PASSWORD,api.HOST, api.TYPE_TOKEN)
     @property
     def _access_token(self):
         if api.ACCESS_TOKEN:
             return api.ACCESS_TOKEN
         userload = 'user=%s&password=%s' % (api.USERNAME, api.PASSWORD)
+        print(userload)
         res= self.client.post("/rest/Token", data=userload)
         api.ACCESS_TOKEN = res.text
+        print(res.text)
         log.info("api.ACCESS_TOKEN: %s", api.ACCESS_TOKEN)
 #         return (api.TYPE_TOKEN, api.ACCESS_TOKEN)
         return api.ACCESS_TOKEN

@@ -48,7 +48,7 @@ class KratosAPIBase:
 #             defaultHeader = { 'Authorization': '%s' % api.ACCESS_TOKEN}
 #         else:
 #             defaultHeader = { 'Authorization': '%s %s' % self._access_token}
-        defaultHeader = { 'Authorization':'%s' % self._access_token}
+        defaultHeader = { 'Authorization':'Bearer %s' % self._access_token}
         if headers:
             return {**defaultHeader, **headers}
         log.info("api.ACCESS_TOKEN: %s", defaultHeader)

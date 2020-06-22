@@ -62,8 +62,8 @@ class NetworkSettingsAPI(KratosAPIBase):
             dataNW = self._response.json()
 #             netWork= Network(dataNW['uri'],dataNW['data']);
 #             dataJson= dataObject(json.dumps(netWork.data))
-            dataJson = dataObject(json.dumps(dataNW))
-            dataJson = json.loads(dataNW, object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))
+#             dataJson = dataObject(json.dumps(dataNW))
+            dataJson = json.loads(json.dumps(dataNW), object_hook=lambda d: namedtuple('X', d.keys())(*d.values()))
             if uri:
                 Assert.should_be_equal(dataJson.uri,uri)
             if hostname:

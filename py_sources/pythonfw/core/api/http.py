@@ -31,7 +31,7 @@ def request(method, address, session=None,
                            params=params, headers=headers, cookies=cookies, json=json, data=data)
     prepared = req.prepare()
     try:
-        response = session.send(prepared, allow_redirects=allow_redirects, timeout=timeout)
+        response = session.send(prepared, allow_redirects=allow_redirects, timeout=timeout,verify=False)
     except requests.exceptions.Timeout:
         raise TimeoutError("Connection to %s timed out" % address)
     except requests.exceptions.ConnectionError:

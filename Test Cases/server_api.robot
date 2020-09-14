@@ -15,5 +15,5 @@ Test case 1
     
     Verify Server Information    localhost
     
-    Verify Network Configuration Information More    /server/server/0    None         192.168.1.1
+    Verify Network Configuration Information More    /server/server/1    None         192.168.1.1
    

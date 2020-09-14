@@ -12,17 +12,17 @@ log = logging.getLogger("api")
 class KratosAPIBase:
     
     def __init__(self):
-        self._userConfig = UserConfig.get_user_config()
-        if self._userConfig:
-            api.USERNAME = self._userConfig.user
-            api.PASSWORD = self._userConfig.password
-            api.HOST = self._userConfig.host
-            api.TYPE_TOKEN = self._userConfig.typetoken
-            print(api.USERNAME)
-            print(api.PASSWORD)
-            print(api.HOST)
-            print(api.TYPE_TOKEN)
-            log.info("_userConfig: %s %s %s %s", api.USERNAME, api.PASSWORD,api.HOST, api.TYPE_TOKEN)
+#         self._userConfig = UserConfig.get_user_config()
+#         if self._userConfig:
+        api.USERNAME = "admin"
+        api.PASSWORD = "kratos"
+        api.HOST = "http://lgus3034-2k12:5555"
+        api.TYPE_TOKEN = "Bearer"
+        print(api.USERNAME)
+        print(api.PASSWORD)
+        print(api.HOST)
+        print(api.TYPE_TOKEN)
+        log.info("_userConfig: %s %s %s %s", api.USERNAME, api.PASSWORD,api.HOST, api.TYPE_TOKEN)
     @property
     def _access_token(self):
         if api.ACCESS_TOKEN:
